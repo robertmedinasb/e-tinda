@@ -25,6 +25,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 10%;
   z-index: 5;
   & .imgWrapper {
     position: absolute;
@@ -168,5 +169,76 @@ export const LinksWrapper = styled.div`
     &:hover {
       transform: scale(1.1);
     }
+  }
+`;
+
+export const CardProduct = styled.div`
+  min-width: 200px;
+  min-height: 300px;
+  border: 1px solid rgba(136, 134, 134, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & .productImg {
+    width: 90%;
+    height: 70%;
+    & img {
+      width: 100%;
+    }
+  }
+  & .productDescription {
+    height: 30%;
+  }
+  @media (max-width: 768px) {
+    min-width: 200px;
+    min-height: 300px;
+  }
+`;
+
+export const ListProducts = styled.div`
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  position: relative;
+  gap: 10px;
+  padding-top: 40px;
+  & h3 {
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    padding: 2px 0px;
+    top: 0;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    & a {
+      margin-left: 5px;
+      display: flex;
+      align-items: center;
+    }
+    & path {
+      fill: ${MAIN_COLOR};
+    }
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+  @media (max-width: 768px) {
+    display: flex;
+    width: 95%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    gap: 5px;
+    overflow-x: scroll;
   }
 `;

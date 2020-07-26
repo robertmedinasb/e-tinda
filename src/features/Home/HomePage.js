@@ -1,15 +1,22 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/core";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { jsx } from "@emotion/core";
+import { ProductsList } from "./../Products/ProductsList";
 import { AppContext } from "./../../App";
-
 export const HomePage = () => {
-  const { MAIN_COLOR } = useContext(AppContext);
+  const { setShowMenu } = useContext(AppContext);
   return (
-    <React.Fragment>
-      <h1 css={{ color: MAIN_COLOR }}>Welcome</h1>
-      <Link to="/signup">Signup</Link>
-    </React.Fragment>
+    <main css={{ minHeight: "60vh" }} onClick={() => setShowMenu(false)}>
+      <div
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ProductsList />
+      </div>
+    </main>
   );
 };

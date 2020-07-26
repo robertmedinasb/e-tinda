@@ -6,9 +6,11 @@ import {
   FormFieldStyled,
   FormStyled,
   FieldWrapper,
-} from "./../styles";
-import { Link } from "react-router-dom";
+} from "../styles";
+import { useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import logoImg from "./../../assets/images/e-tinda-logo.png";
+import { userLogged } from "./userSlice";
 
 export const LoginForm = ({
   initialValues = {
@@ -18,6 +20,8 @@ export const LoginForm = ({
   },
   typeForm = "new",
 }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   function FormField({ type, form, name, field, ...props }) {
     return (
       <FormFieldStyled>
@@ -31,7 +35,9 @@ export const LoginForm = ({
       // validate={{}}
       onSubmit={(values, { setSubmitting }) => {
         alert(JSON.stringify(values));
+        dispatch(userLogged({ values }));
         setSubmitting(false);
+        history.replace("/");
       }}
     >
       {({ isSubmitting }) => (

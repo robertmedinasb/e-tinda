@@ -4,7 +4,6 @@ import { jsx } from "@emotion/core";
 import { LoginForm } from "./LoginForm";
 import { FormWrapper, TitlePage, MessagePage } from "../styles";
 import posterLogin from "./../../assets/images/hand_and_phone.png";
-
 export const Login = () => {
   return (
     <React.Fragment>
