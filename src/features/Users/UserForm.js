@@ -17,6 +17,7 @@ export const UserForm = ({
     district: "",
     password: "",
     password_confirmation: "",
+    dni: "",
   },
   typeForm = "new",
 }) => {
@@ -70,6 +71,15 @@ export const UserForm = ({
               />
             </FieldWrapper>
             <FieldWrapper>
+              <label>DNI / C.E:</label>
+              <Field
+                component={FormField}
+                type="email"
+                name="email"
+                placeholder="12345678"
+              />
+            </FieldWrapper>
+            <FieldWrapper>
               <label>Correo Electrónico:</label>
               <Field
                 component={FormField}
@@ -120,7 +130,7 @@ export const UserForm = ({
               <button type="submit">Registrarme</button>
             </FieldWrapper>
             <LinksWrapper>
-              <Link to="/login">Ya tengo una cuenta</Link>
+              <Link to="/login">Iniciar Sesión</Link>
               <Link to="/forget_password">He olvidado mi contraseña</Link>
               <Link to="/">Inicio</Link>
             </LinksWrapper>

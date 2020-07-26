@@ -52,11 +52,11 @@ export const Header = styled.header`
 export const FormStyled = styled.main`
   margin: 0 auto;
   width: 90%;
-  max-width: 350px;
+  max-width: 380px;
   padding: 20px 30px;
   border: 2px solid ${MAIN_COLOR};
   border-radius: 15px;
-  margin-bottom: 50px;
+  box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.75);
 `;
 
 export const FieldWrapper = styled.div`
@@ -77,6 +77,7 @@ export const FieldWrapper = styled.div`
   }
   & button {
     height: 40px;
+    margin-top: 10px;
     margin-bottom: 5px;
     border-radius: 10px;
     background: ${MAIN_COLOR};
@@ -105,7 +106,41 @@ export const TitlePage = styled.h1`
 
 export const MessagePage = styled.p`
   text-align: center;
-  margin: 20px auto 25px auto;
+  margin: 20px auto;
+  margin-top: 0;
   width: 90%;
   max-width: 400px;
+  font-size: 18px;
+`;
+
+export const FormWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 1150px;
+  margin: 0 auto;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    & img {
+      border-radius: 10px;
+      box-shadow: ;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.75);
+    }
+  }
+  @media (max-width: 900px) {
+    width: 95%;
+    flex-wrap: wrap;
+    & > div {
+      width: 100%;
+    }
+    & img {
+      display: none;
+    }
+  }
 `;
