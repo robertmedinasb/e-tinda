@@ -20,7 +20,7 @@ export const ProductsList = ({ category = "Moda" }) => {
           </Link>
         </h3>
         {products.map((product) => (
-          <ProductCardOfList product={product} />
+          <ProductCardOfList key={product.id} product={product} />
         ))}
       </ListProducts>
     </React.Fragment>
