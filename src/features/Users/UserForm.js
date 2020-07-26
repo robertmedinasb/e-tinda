@@ -4,7 +4,12 @@ import styled from "@emotion/styled";
 import { Form, Formik, Field } from "formik";
 import { useContext } from "react";
 import { AppContext } from "./../../App";
-import { FormFieldStyled, FormStyled, FieldWrapper } from "./../styles";
+import {
+  LinksWrapper,
+  FormFieldStyled,
+  FormStyled,
+  FieldWrapper,
+} from "./../styles";
 import { Link } from "react-router-dom";
 
 export const UserForm = ({
@@ -21,17 +26,6 @@ export const UserForm = ({
   },
   typeForm = "new",
 }) => {
-  const LinksWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    & a {
-      color: rgb(40, 146, 207);
-      text-decoration: none;
-    }
-  `;
   function FormField({ type, form, name, field, ...props }) {
     return (
       <FormFieldStyled>
@@ -131,7 +125,6 @@ export const UserForm = ({
             </FieldWrapper>
             <LinksWrapper>
               <Link to="/login">Iniciar Sesión</Link>
-              <Link to="/forget_password">He olvidado mi contraseña</Link>
               <Link to="/">Inicio</Link>
             </LinksWrapper>
           </Form>

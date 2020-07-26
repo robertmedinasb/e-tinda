@@ -9,6 +9,7 @@ import "./App.css";
 import { Signup } from "./features/Users/Signup";
 import { HomePage } from "./features/Home/HomePage";
 import { HeaderNav } from "./features/Home/HeaderNav";
+import { Login } from "./features/Users/Login";
 
 export const AppContext = React.createContext();
 function App() {
@@ -65,6 +66,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
             <Redirect to="/" />
           </Switch>
         </div>

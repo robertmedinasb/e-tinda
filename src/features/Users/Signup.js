@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx } from "@emotion/core";
+import { jsx, css } from "@emotion/core";
 import { UserForm } from "./UserForm";
-import styled from "@emotion/styled";
 import { FormWrapper, TitlePage, MessagePage } from "../styles";
 import posterLogin from "./../../assets/images/posterLogin.png";
-import logoImg from "./../../assets/images/e-tinda-logo.png";
 
 export const Signup = () => {
   return (
@@ -14,12 +12,21 @@ export const Signup = () => {
         <div>
           <TitlePage>¡Bienvenido a E-Tinda!</TitlePage>
           <MessagePage>
-            Hola, estamos contentos de que decidas unirte a esta comunidad de
+            ¡Hola!, estamos contentos de que decidas unirte a esta comunidad de
             comercio latinoamericano
-            <br /> Llena el siguiente formulario para continuar: <span>🎉</span>
+            <br /> Llena el siguiente formulario para continuar:{" "}
+            <span aria-label="🎉" role="img">
+              🎉
+            </span>
             :
           </MessagePage>
-          <img src={posterLogin} alt="poster" />
+          <img
+            css={css`
+              box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.75);
+            `}
+            src={posterLogin}
+            alt="poster"
+          />
         </div>
         <UserForm />
       </FormWrapper>

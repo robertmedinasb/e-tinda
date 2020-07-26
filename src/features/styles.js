@@ -57,6 +57,14 @@ export const FormStyled = styled.main`
   border: 2px solid ${MAIN_COLOR};
   border-radius: 15px;
   box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.75);
+  & .imgForm {
+    max-width: 200px;
+    margin: 0 auto;
+    & img {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
 `;
 
 export const FieldWrapper = styled.div`
@@ -130,7 +138,7 @@ export const FormWrapper = styled.div`
       box-shadow: ;
       width: 90%;
       max-width: 450px;
-      box-shadow: 10px 10px 18px -2px rgba(0, 0, 0, 0.75);
+      
     }
   }
   @media (max-width: 900px) {
@@ -139,8 +147,19 @@ export const FormWrapper = styled.div`
     & > div {
       width: 100%;
     }
-    & img {
+    & > div > img {
       display: none;
     }
+  }
+`;
+export const LinksWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  & a {
+    color: rgb(40, 146, 207);
+    text-decoration: none;
   }
 `;
