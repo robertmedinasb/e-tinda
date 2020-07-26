@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import styled from "@emotion/styled";
 import { Form, Formik, Field } from "formik";
-import { useContext } from "react";
-import { AppContext } from "./../../App";
 import {
   LinksWrapper,
   FormFieldStyled,
@@ -28,7 +25,6 @@ export const LoginForm = ({
       </FormFieldStyled>
     );
   }
-  const { Districts } = useContext(AppContext);
   return (
     <Formik
       initialValues={initialValues}
@@ -48,8 +44,8 @@ export const LoginForm = ({
               <label>DNI / C.E:</label>
               <Field
                 component={FormField}
-                type="email"
-                name="email"
+                type="tlf"
+                name="dni"
                 placeholder="12345678"
               />
             </FieldWrapper>
@@ -64,7 +60,12 @@ export const LoginForm = ({
             </FieldWrapper>
             <FieldWrapper>
               <label>Contraseña:</label>
-              <Field component={FormField} type="password" name="password" />
+              <Field
+                component={FormField}
+                placeholder="********"
+                type="password"
+                name="password"
+              />
             </FieldWrapper>
             <FieldWrapper>
               <button type="submit">Iniciar Sesión</button>

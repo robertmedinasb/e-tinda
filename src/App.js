@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { Signup } from "./features/Users/Signup";
 import { HomePage } from "./features/Home/HomePage";
@@ -67,7 +62,7 @@ function App() {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/login" component={Login} />
-            <Redirect to="/" />
+            <Route render={() => <h1>404 Page Not Found</h1>} />
           </Switch>
         </div>
       </AppContext.Provider>

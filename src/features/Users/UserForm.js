@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import styled from "@emotion/styled";
 import { Form, Formik, Field } from "formik";
 import { useContext } from "react";
 import { AppContext } from "./../../App";
@@ -68,8 +67,8 @@ export const UserForm = ({
               <label>DNI / C.E:</label>
               <Field
                 component={FormField}
-                type="email"
-                name="email"
+                type="dni"
+                name="tlf"
                 placeholder="12345678"
               />
             </FieldWrapper>
@@ -110,11 +109,17 @@ export const UserForm = ({
             </FieldWrapper>
             <FieldWrapper>
               <label>Contraseña:</label>
-              <Field component={FormField} type="password" name="password" />
+              <Field
+                component={FormField}
+                placeholder="***********"
+                type="password"
+                name="password"
+              />
             </FieldWrapper>
             <FieldWrapper>
               <label>Confirmar contraseña:</label>
               <Field
+                placeholder="***********"
                 component={FormField}
                 type="password"
                 name="password_confirmation"

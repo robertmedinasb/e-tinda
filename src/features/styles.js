@@ -33,6 +33,10 @@ export const Header = styled.header`
     max-width: 280px;
     & img {
       width: 100%;
+      transition: all 0.5s;
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
   @media (min-width: 768px) {
@@ -138,7 +142,6 @@ export const FormWrapper = styled.div`
       box-shadow: ;
       width: 90%;
       max-width: 450px;
-      
     }
   }
   @media (max-width: 900px) {
@@ -161,5 +164,9 @@ export const LinksWrapper = styled.div`
   & a {
     color: rgb(40, 146, 207);
     text-decoration: none;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
